@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    // Deleting the project will automatically delete details because of ON DELETE CASCADE
     $stmt = $pdo->prepare("DELETE FROM projects WHERE id = :id");
     $stmt->execute(['id' => $id]);
 
